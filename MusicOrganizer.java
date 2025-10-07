@@ -60,15 +60,33 @@ public class MusicOrganizer
         }
     }
     
-    // LAB # 4 = Play a Random Track (4.43)
+    // ***  *** LAB #4 CODE *** ***
+    
+    // LAB # 4 - Play a Random Track (4.43)
     /* 
      * Create a method that will play a random track based on the amount of elements in the arrayList<tracks>
      */
     public void playRandomTrack(){
-        Random randomTrack = new Random(); // doable from importing 'Random'
-        int randomIndex = randomTrack.nextInt(tracks.size());
+        Random randomTrack = new Random(); // creating an obj of class Random; do-able from importing 'Random' library
+        int randomIndex = randomTrack.nextInt(tracks.size()); // assigning a random 
         playTrack(randomIndex);
     }
+    
+    
+    // LAB #4 - Play All Tracks Randomly, Once (4.45)
+    /*
+     * Create a method that will randomly play all elements from arrayList<Track> tracks exactly once.
+     */
+    public void playShuffle(){
+        ArrayList<Track> copy = new ArrayList<>(tracks);
+        Collections.shuffle(copy); // Collections API - returns arrayList with elements in different indexes.
+        
+        for (int i = 0; i < copy.size(); i++) { //Plays each track from the shuffled arrayList 'copy'
+            playTrack(i);
+        }
+    }
+    
+    // ***  *** END OF LAB #4 CODE *** ***
     
     /**
      * Add a track file to the collection.
