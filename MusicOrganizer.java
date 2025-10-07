@@ -2,7 +2,8 @@ import java.util.ArrayList;
 import java.util.Random; // import random library package to satisfy 4.43, book calls the .nextInt() method.
 import java.util.Iterator; // import Iterator libray to test iterator syntax.
 import java.util.Collections; // import Collections to access different .Collection API methods
-import java.util.Iterator; // import Iterator library to use it for comprehensibility 
+import java.util.Iterator; // import Iterator library to use it for comprehensibility
+
 /**
  * A class to hold details of audio tracks.
  * Individual tracks may be played.
@@ -57,6 +58,16 @@ public class MusicOrganizer
             // Track t = it.next();
             System.out.println(it.next().getDetails());
         }
+    }
+    
+    // LAB # 4 = Play a Random Track (4.43)
+    /* 
+     * Create a method that will play a random track based on the amount of elements in the arrayList<tracks>
+     */
+    public void playRandomTrack(){
+        Random randomTrack = new Random(); // doable from importing 'Random'
+        int randomIndex = randomTrack.nextInt(tracks.size());
+        playTrack(randomIndex);
     }
     
     /**
