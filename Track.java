@@ -4,6 +4,8 @@
  * 
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
+ * 
+ * edited by Franco Acosta on 10.06.25
  */
 public class Track
 {
